@@ -1,4 +1,4 @@
-name: 🚀 Deploy Astro to Hostinger via SFTP
+name: 🚀 Deploy Astro to Hostinger via FTPS
 
 on:
   push:
@@ -24,12 +24,14 @@ jobs:
           npm install
           npm run build
 
-      - name: 📂 Sync files via SFTP / rsync
-        uses: SamKirkland/web-deploy@v1
+      - name: 📂 Sync files via FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          target-server: ${{ secrets.FTP_SERVER }}
-          remote-user: ${{ secrets.FTP_USERNAME }}
-          private-ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
-          ssh-port: 65002
-          source-path: dist/
-          destination-path: /home/u194847263/domains/newbeltane.co.uk/public_html/
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: dist/
+          server-dir: domains/newbeltane.co.uk/public_html/
+          timeout: 60000
+
