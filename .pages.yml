@@ -1,0 +1,31 @@
+media:
+  input: public
+  output: /
+content:
+  - name: posts
+    label: Articles
+    type: collection
+    path: src/pages # Note: Change this to src/content/blog if you are using Astro Content Collections
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: string
+      - name: pubDate
+        label: Publish Date
+        type: datetime
+      - name: category
+        label: Category
+        type: string
+      - name: tags
+        label: Tags
+        type: list
+      - name: draft
+        label: Draft
+        type: boolean
+      - name: body
+        label: Content
+        type: rich-text
