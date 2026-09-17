@@ -5,7 +5,7 @@ content:
   - name: posts
     label: Articles
     type: collection
-    path: src/pages # Note: Change this to src/content/blog if you are using Astro Content Collections
+    path: src/content/blog
     fields:
       - name: title
         label: Title
