@@ -5,7 +5,7 @@ content:
   - name: posts
     label: Articles
     type: collection
-    path: src/content/blog
+    path: src/pages/blog
     fields:
       - name: title
         label: Title
@@ -16,13 +16,14 @@ content:
         type: string
       - name: pubDate
         label: Publish Date
-        type: datetime
+        type: date
       - name: category
         label: Category
         type: string
       - name: tags
         label: Tags
-        type: list
+        type: string
+        list: true
       - name: draft
         label: Draft
         type: boolean
